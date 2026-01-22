@@ -1,1 +1,94 @@
 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>رسالة خاصة 💖</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
+}
+
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e63b5d;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 17px;
+  color: #333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h3>اكتب اسمك 💌</h3>
+  <input type="text" id="name" placeholder="اسمك هنا">
+  <br>
+  <button onclick="showMessage()">افتح الرسالة</button>
+  <div id="result"></div>
+</div>
+
+<script>
+function showMessage() {
+  let name = document.getElementById("name").value;
+
+  if (name === "") {
+    document.getElementById("result").innerHTML = "❗ اكتب اسمك الأول";
+    return;
+  }
+
+  let messages = [
+    "💖 " + name + "، وجودك بيخلّي الدنيا أهدى وأحلى.",
+    "💌 " + name + "، اسمك لوحده كفاية يبتسم.",
+    "🌸 " + name + "، انت شخص مميز ومكانك دايمًا قريب.",
+    "✨ " + name + "، في ناس وجودهم فرق… وانت واحد منهم.",
+    "💞 " + name + "، الرسالة دي ليك مخصوص."
+  ];
+
+  let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  document.getElementById("result").innerHTML = randomMessage;
+}
+</script>
+
+</body>
+</html>
