@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>رسالة خاصة 💖</title>
+<title>رسالة سرية 🔒</title>
 
 <style>
 body {
@@ -46,14 +45,9 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background: #e63b5d;
-}
-
 #result {
   margin-top: 20px;
   font-size: 17px;
-  color: #333;
 }
 </style>
 </head>
@@ -61,32 +55,27 @@ button:hover {
 <body>
 
 <div class="box">
-  <h3>اكتب اسمك 💌</h3>
-  <input type="text" id="name" placeholder="اسمك هنا">
+  <h3>🔒 اكتب كلمة السر</h3>
+  <input type="password" id="pass" placeholder="كلمة السر">
   <br>
-  <button onclick="showMessage()">افتح الرسالة</button>
+  <button onclick="check()">فتح</button>
   <div id="result"></div>
 </div>
 
 <script>
-function showMessage() {
-  let name = document.getElementById("name").value;
+function check() {
+  let password = document.getElementById("pass").value;
 
-  if (name === "") {
-    document.getElementById("result").innerHTML = "❗ اكتب اسمك الأول";
-    return;
+  // ✨ غير كلمة السر من هنا
+  let correctPassword = "5/7/2008";
+
+  if (password === correctPassword) {
+    document.getElementById("result").innerHTML =
+      "💖 love you so much رسالة خاصة: بحبك قد الدنيا كلها 🌸";
+  } else {
+    document.getElementById("result").innerHTML =
+      "❌ كلمة السر غلط";
   }
-
-  let messages = [
-    "💖 " + name + "، وجودك بيخلّي الدنيا أهدى وأحلى.",
-    "💌 " + name + "، اسمك لوحده كفاية يبتسم.",
-    "🌸 " + name + "، انت شخص مميز ومكانك دايمًا قريب.",
-    "✨ " + name + "، في ناس وجودهم فرق… وانت واحد منهم.",
-    "💞 " + name + "، الرسالة دي ليك مخصوص."
-  ];
-
-  let randomMessage = messages[Math.floor(Math.random() * messages.length)];
-  document.getElementById("result").innerHTML = randomMessage;
 }
 </script>
 
