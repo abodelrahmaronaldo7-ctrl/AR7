@@ -2,17 +2,17 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>رسالة سرية 🔒</title>
+<title>مس مريم 🔒</title>
 
 <style>
 body {
-  margin: 0;
   height: 100vh;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  margin: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: Arial;
   direction: rtl;
 }
 
@@ -20,9 +20,8 @@ body {
   background: white;
   padding: 25px;
   border-radius: 20px;
-  width: 300px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 300px;
 }
 
 input {
@@ -30,24 +29,16 @@ input {
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 16px;
-  text-align: center;
 }
 
 button {
   margin-top: 15px;
   padding: 10px 25px;
-  border: none;
   border-radius: 20px;
+  border: none;
   background: #ff4d6d;
   color: white;
   font-size: 16px;
-  cursor: pointer;
-}
-
-#result {
-  margin-top: 20px;
-  font-size: 17px;
 }
 </style>
 </head>
@@ -59,22 +50,19 @@ button {
   <input type="password" id="pass" placeholder="كلمة السر">
   <br>
   <button onclick="check()">فتح</button>
-  <div id="result"></div>
 </div>
 
 <script>
 function check() {
   let password = document.getElementById("pass").value;
 
-  // ✨ غير كلمة السر من هنا
-  let correctPassword = "5/7/2008";
+  // غير كلمة السر هنا
+  let correctPassword = "6/10/2024";
 
   if (password === correctPassword) {
-    document.getElementById("result").innerHTML =
-      "💖 love you so much رسالة خاصة: بحبك قد الدنيا كلها 🌸";
+    window.location.href = "message.html";
   } else {
-    document.getElementById("result").innerHTML =
-      "❌ كلمة السر غلط";
+    alert("❌ كلمة السر غلط");
   }
 }
 </script>
